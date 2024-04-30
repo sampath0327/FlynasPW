@@ -1,0 +1,12 @@
+INDEX VERSION 1.134+D:\PLAYWRIGHT_29 Apr 24\TestTestNGPW\.metadata\.plugins\org.eclipse.jdt.core
+2565356412.index
+1284236969.index
+2344515613.index
+3765568166.index
+1865797976.index
+3946334692.index
+1437047915.index
+3150469976.index
+1510675576.index
+1583925125.index
+2881898921.index

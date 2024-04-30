@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="com.microsoft.playwright.Playwright"/>
+    <fullyQualifiedTypeName name="com.microsoft.playwright.Browser"/>
+    <fullyQualifiedTypeName name="com.microsoft.playwright.Page"/>
+    <fullyQualifiedTypeName name="com.microsoft.playwright.BrowserType"/>
+    <fullyQualifiedTypeName name="com.microsoft.playwright.BrowserType.LaunchOptions"/>
+    <fullyQualifiedTypeName name="com.microsoft.playwright.ElementHandle"/>
+    <fullyQualifiedTypeName name="org.testng.annotations.Test"/>
+</qualifiedTypeNameHistroy>

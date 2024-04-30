@@ -1,0 +1,11 @@
+package bookingdomestic;
+
+import com.microsoft.playwright.Playwright;
+
+public class BookingOneWay {
+	public static void main (String[] args) {
+		
+		Playwright.create();
+	}
+
+}

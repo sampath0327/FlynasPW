@@ -1,0 +1,72 @@
+package bookingdomestic;
+
+import com.microsoft.playwright.Browser;
+import com.microsoft.playwright.BrowserType;
+import com.microsoft.playwright.ElementHandle;
+import com.microsoft.playwright.Page;
+import com.microsoft.playwright.Playwright;
+
+public class BookingOneWay {
+	public static void main (String[] args) {
+		
+		Playwright playwright = Playwright.create();
+		Browser browser = playwright.chromium().launch(
+				new BrowserType.LaunchOptions()
+				.setHeadless(false)
+				);
+		Page page = browser.newPage();
+		
+		page.navigate("https://booking.flynas.com/#/booking/search"); //Live
+		System.out.println(page.title());
+		 page.click("//label[normalize-space()='One way']");  //OneWay
+		 page.click("//span[normalize-space()='From']");  //Departure
+		 page.type("//span[normalize-space()='From']", "RUH"); //Departure
+		 page.keyboard().press("Enter");
+		 page.type("//span[normalize-space()='To']", "JED");  //Arrival
+		 page.keyboard().press("Enter");
+			System.out.println(page.title());
+		 page.click("span.custom-day.datefaretd.element_2024-04-29_trip0.ng-star-inserted");  //DepartDate
+		 page.click("//*[@id='fl-extra-details']/div[4]/div/div/button"); //searchButton
+		 page.click("//*[@id='card0-0']/div/div[3]/div[2]/div/button");   //FirstFlightPrice
+		 page.locator("(//div[@class='bundle-top'])[2]").click(); //Value
+		 page.locator("//div[@class='col-8 open-total-fare hide-mobile']//span[@class='summary-open collapsed ng-star-inserted']").click(); //BottomArrow
+		 page.locator("//span[@class='summary-collaps']").click(); //plusbuttoninPriceBreakdown
+		 page.locator("//*[@id=\"journetTotal0\"]/div[3]/div[1]/div[2]/div/span[1]"); //ValuebundlenameinPB
+		 page.click("//app-summary//button[1]");	//addpaxbtn
+		 page.click("//a[@class='btn skip-comfort']");	//skip
+		 page.click("#mat-input-15");	//tittle
+		 page.click("//*[@id=\"mat-option-461\"]");	//MRtittle
+		 page.type("//*[@id=\"passenger0_ADT\"]/div/div[1]/div/div[2]/div/input", "samapth");	//FirstName
+		 page.type("//*[@id=\"passenger0_ADT\"]/div/div[1]/div/div[3]/div/input", "pal");		//LastName
+		 
+		 page.click("#mat-input-16");	//DD
+		 page.click("//span[normalize-space()='23']");	//23
+		 page.click("#mat-input-17");	//MM
+		 page.click("//span[normalize-space()='March']");	//March
+		 page.click("#mat-input-18");	//YY
+		 page.click("//span[normalize-space()='1992']");	//1992
+		 
+		 ElementHandle idelement = page.querySelector("#mat-input-20");
+		 idelement.evaluate("idelement => idelement.scrollIntoView()");
+		 
+		 //page.evaluate("document.querySelector('#mat-input-20').scrollIntoViewIfNeeded()");
+
+		 page.click("#mat-input-20");	//Document
+		 page.click("//span[normalize-space()='National ID']");	//NationalID
+		 page.type("//input[@name='idnumber']", "1245789630");
+		// page.click("//span[normalize-space()='Passport']");	//passport
+		 
+		 ElementHandle numelement = page.querySelector("input[placeholder='555XXXXXX']");
+		 numelement.evaluate("numelement => numelement.scrollIntoView()");
+		 
+		 page.type("//input[@placeholder='555XXXXXX']", "9876543210");	//phno
+		 page.type("//input[@id='email']", "samtest@yopmail.com");	//email
+		 
+		
+		
+		page.close();
+		browser.close();
+		playwright.close();
+	}
+
+}
